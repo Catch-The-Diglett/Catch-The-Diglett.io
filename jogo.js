@@ -9,10 +9,10 @@ var perdidos = 0;
 var errados = 0;
 
 /** tempo entre cada diglett sair do buraco */
-var intervalo = 1000;
+var intervalo = 800;
 
 /** tempo que o diglett fica fora do buraco */
-var janela = 1000;
+var janela = 800;
 
 /** timer que controla o tempo do diglett fora do buraco */
 var timer = null;
@@ -137,4 +137,5 @@ function poke(evento) {
     }
     mostraPontuacao();
 }
+
 
