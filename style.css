@@ -229,73 +229,36 @@ Recordes
 
 /*
  * Para tornar as páginas responsivas
- */
 /* Responsividade até notebooks/tablets */
 @media (max-width: 991px) {
-    /* Regras */
     .regras {
         flex-direction: column;
     }
     .regras .imgBox {
-        height: 100%;
+        height: auto;
     }
 
-    /* Tabuleiro */
     .tabuleiro {
         flex-direction: column-reverse;
-        height: 100%;
+        height: auto;
     }
     .pontos th {
-        font-size: 30px;
-    }
-    .pontos td:first-child {
-        font-size: 20px;
-    }
-    .gramado {
-        width: 400px;
-        height: 400px;
-    }
-    .pontos {
-        width: 400px;
-        height: 400px;
-    }    
-    .gramado img {
-        padding: 10px 30px 10px 30px;
-    }
-
-    /* Recordes */
-    .records tr th {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .records th {
-        font-size: 18px;
-    }
-    .records td {
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 15px;
-    }
-}
-
-/* Responsividade para tablets em pé */
-@media (max-width: 768px) {
-    .pontos th {
-        font-size: 24px;
+        font-size: 26px;
     }
     .pontos td:first-child {
         font-size: 18px;
     }
     .gramado,
     .pontos {
-        width: 320px;
-        height: 320px;
-    }
+        width: 360px;
+        height: 360px;
+    }    
     .gramado img {
-        padding: 5px 15px;
+        padding: 8px 20px;
         max-width: 100%;
         height: auto;
     }
+
     .records th {
         font-size: 16px;
     }
@@ -304,28 +267,61 @@ Recordes
     }
 }
 
-/* Responsividade para celulares */
-@media (max-width: 576px) {
+/* tablets em pé */
+@media (max-width: 768px) {
     body {
-        padding: 10px;
+        overflow: auto !important; /* libera scroll */
     }
+
     .tabuleiro,
     .regras {
         flex-direction: column;
         align-items: center;
     }
+
     .gramado,
     .pontos {
-        width: 100%;
-        max-width: 280px;
-        height: auto;
+        width: 300px;
+        height: 300px;
     }
+
     .pontos th {
-        font-size: 20px;
+        font-size: 22px;
     }
     .pontos td:first-child {
         font-size: 16px;
     }
+}
+
+/* celulares */
+@media (max-width: 576px) {
+    body {
+        padding: 8px;
+        overflow: auto !important; /* SEM overflow:hidden no celular */
+        font-family: 'MinhaFonte', Arial, sans-serif; /* força a fonte */
+    }
+
+    .tabuleiro,
+    .regras {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .gramado,
+    .pontos {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+    }
+
+    .pontos th {
+        font-size: 18px;
+    }
+    .pontos td:first-child {
+        font-size: 14px;
+    }
+
     .records th {
         font-size: 14px;
     }
