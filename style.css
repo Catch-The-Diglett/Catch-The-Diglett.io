@@ -140,7 +140,7 @@ Tabuleiro
     padding: 25px 30px 25px 30px;
     box-sizing: content-box;   
     width: 100px;
-    height: 40px;
+    height: 100px;
 }
 
 .pontos {
@@ -273,4 +273,5 @@ Recordes
         font-size: 15px;
     }
 }
+
 
