@@ -34,7 +34,7 @@ onload = function () {
 };
 
 /**
- * Sobe uma toupeira
+ * Sobe um Diglett
  * Remove o evento do botão start
  */
 function start() {
@@ -48,7 +48,7 @@ function start() {
 /**
  * Coloca o diglett para fora do buraco.
  * Recalcula o tempo que a toupeira fica fora do buraco.
- * @fires remover a toupeira
+ * @fires remover o diglett
  * @fires próximo evento.
  */
 function sobeDiglett() {
@@ -60,9 +60,9 @@ function sobeDiglett() {
 }
 
 /**
- * Remove a toupeira de um buraco
+ * Remove o diglett de um buraco
  * 
- * @param {int} buraco número do buraco onde está a toupeira
+ * @param {int} buraco número do buraco onde está ao diglett
  */
 function tiraDiglett(buraco) {
     var objBuraco = document.getElementById('buraco' + buraco);
@@ -142,3 +142,4 @@ function poke(evento) {
     }
     mostraPontuacao();
 }
+
