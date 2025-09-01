@@ -2,7 +2,6 @@ body {
     margin: 0px;
     border: 0px;
     padding: 0px;
-    overflow: hidden;
     cursor: url(https://cdn.custom-cursor.com/db/8726/32/pokemon-diglett-and-dugtrio-cursor.png) , default !important;
 }
 
@@ -86,22 +85,20 @@ Regras
     height: 100vh;
     background: url(./images/terra.jpg);
     display:flex;
-    font-family: 'MedievalSharp';
+    font-family: 'MedievalSharp', cursive;
     color: #e9e7e3;
     object-fit: cover;
-    overflow: hidden;
 }
 
 .regras .contentBox {
     width: 100%;
     background: url(./images/terra.jpg);
-    font-family: 'MedievalSharp';
+    font-family: 'MedievalSharp', cursive;
     text-align: center;
     justify-content: center;
     align-items: center;
     transform: translate(0,10%);
     font-size: x-large;
-    font-size: xx-large;
 }
 
 .regras .imgBox {
@@ -167,7 +164,7 @@ Tabuleiro
     width: 100%;
     font-size: 36px;
     border: 1px solid #000000;
-     cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png), pointer !important;
+    cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png), pointer !important;
 }
 
 /*
@@ -178,7 +175,7 @@ Recordes
     display: flex;             
     align-items: center;        
     justify-content: center;   
-    font-family: 'MedievalSharp';
+    font-family: 'MedievalSharp', cursive;
     background-color: #e9e7e3;
     text-align: center;
     color: #000000;
@@ -240,6 +237,7 @@ Recordes
     .tabuleiro {
         flex-direction: column-reverse;
         height: 100%;
+        overflow: hidden;
     }
     .pontos th {
         font-size: 30px;
@@ -273,5 +271,109 @@ Recordes
         font-size: 15px;
     }
 }
+/* tablets em pé */
+@media (max-width: 768px) {
+    body {
+        overflow: auto !important; /* libera scroll */
+    }
+    /* Regras */
+    .regras {
+        flex-direction: column;
+    }
+    .regras .imgBox {
+        height: 100%;
+    }
 
+    /* Tabuleiro */
+    .tabuleiro {
+        flex-direction: column-reverse;
+        height: 100%;
+        overflow: hidden;
+    }
+    .pontos th {
+        font-size: 30px;
+    }
+    .pontos td:first-child {
+        font-size: 20px;
+    }
+    .gramado {
+        width: 400px;
+        height: 400px;
+    }
+    .pontos {
+        width: 400px;
+        height: 400px;
+    }    
+    .gramado img {
+        padding: 10px 10px 10px 10px;
+    }
+
+    /* Recordes */
+     .records tr th {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .records th {
+        font-size: 18px;
+    }
+    .records td {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+    }
+}
+/* celulares */
+@media (max-width: 576px) {
+    body {
+        padding: 8px;
+        overflow: auto !important; /* SEM overflow:hidden no celular */
+        font-family: 'MinhaFonte', Arial, sans-serif; /* força a fonte */
+    }
+
+     /* Regras */
+    .regras {
+        flex-direction: column;
+    }
+    .regras .imgBox {
+        height: 100%;
+    }
+
+    /* Tabuleiro */
+    .tabuleiro {
+        flex-direction: column-reverse;
+        height: 100%;
+        overflow: hidden;
+    }
+    .pontos th {
+        font-size: 30px;
+    }
+    .pontos td:first-child {
+        font-size: 20px;
+    }
+    .gramado {
+        width: 400px;
+        height: 400px;
+    }
+    .pontos {
+        width: 400px;
+        height: 400px;
+    }    
+    .gramado img {
+        padding: 10px 10px 10px 10px;
+    }
+
+    /* Recordes */
+     .records tr th {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .records th {
+        font-size: 18px;
+    }
+    .records td {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+    }
+}
 
