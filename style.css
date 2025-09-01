@@ -153,12 +153,14 @@ Tabuleiro
 .pontos th {
     font-size: 50px;
     font-family: 'Bungee Spice', sans-serif;
+    color: #000000;
     text-align: center;
 }
 
 .pontos td:first-child {
     text-align: right;
     font-size: 36px;
+    color: #000000;
     font-family: 'Bungee Spice', sans-serif;
     text-align: left;
 }
@@ -166,8 +168,9 @@ Tabuleiro
 #start {
     width: 100%;
     font-size: 36px;
+    color: #000000;
     border: 1px solid #000000;
-     cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png), pointer !important;
+    cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png), pointer !important;
 }
 
 /*
@@ -227,7 +230,8 @@ Recordes
 /*
  * Para tornar as páginas responsivas
  */
-@media(max-width: 991px) {
+/* Responsividade até notebooks/tablets */
+@media (max-width: 991px) {
     /* Regras */
     .regras {
         flex-direction: column;
@@ -260,7 +264,7 @@ Recordes
     }
 
     /* Recordes */
-     .records tr th {
+    .records tr th {
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -274,4 +278,58 @@ Recordes
     }
 }
 
+/* Responsividade para tablets em pé */
+@media (max-width: 768px) {
+    .pontos th {
+        font-size: 24px;
+    }
+    .pontos td:first-child {
+        font-size: 18px;
+    }
+    .gramado,
+    .pontos {
+        width: 320px;
+        height: 320px;
+    }
+    .gramado img {
+        padding: 5px 15px;
+        max-width: 100%;
+        height: auto;
+    }
+    .records th {
+        font-size: 16px;
+    }
+    .records td {
+        font-size: 14px;
+    }
+}
 
+/* Responsividade para celulares */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+    .tabuleiro,
+    .regras {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gramado,
+    .pontos {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+    .pontos th {
+        font-size: 20px;
+    }
+    .pontos td:first-child {
+        font-size: 16px;
+    }
+    .records th {
+        font-size: 14px;
+    }
+    .records td {
+        font-size: 12px;
+    }
+}
