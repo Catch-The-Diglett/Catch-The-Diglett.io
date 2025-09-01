@@ -279,6 +279,7 @@ Recordes
     /* Regras */
     .regras {
         flex-direction: column;
+        overflow: hidden;
     }
     .regras .imgBox {
         height: 100%;
@@ -333,6 +334,7 @@ Recordes
      /* Regras */
     .regras {
         flex-direction: column;
+        overflow: hidden;
     }
     .regras .imgBox {
         height: 100%;
