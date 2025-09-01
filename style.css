@@ -225,6 +225,11 @@ Recordes
  * Para tornar as páginas responsivas
  */
 @media(max-width: 991px) {
+    .arrow {
+    width: 70px;
+    height: 70px;
+}
+    
     /* Regras */
     .regras {
         flex-direction: column;
@@ -389,5 +394,4 @@ Recordes
         font-size: 15px;
     }
 }
-
 
