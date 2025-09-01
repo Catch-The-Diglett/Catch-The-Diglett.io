@@ -276,6 +276,13 @@ Recordes
     body {
         overflow: auto !important; /* libera scroll */
     }
+
+    .arrow {
+    width: 30px;
+    height: 30px;
+    cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png), pointer !important;
+}
+
     /* Regras */
     .regras {
         flex-direction: column;
@@ -293,9 +300,11 @@ Recordes
     }
     .pontos th {
         font-size: 30px;
+        font-family: 'MedievalSharp', cursive;
     }
     .pontos td:first-child {
         font-size: 20px;
+        font-family: 'MedievalSharp', cursive;
     }
     .gramado {
         width: 400px;
@@ -329,7 +338,14 @@ Recordes
         padding: 8px;
         overflow: auto !important; /* SEM overflow:hidden no celular */
         font-family: 'MinhaFonte', Arial, sans-serif; /* força a fonte */
+        cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png), pointer !important;
     }
+
+    .arrow {
+    width: 20px;
+    height: 20px;
+    cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png), pointer !important;
+}
 
      /* Regras */
     .regras {
@@ -348,9 +364,11 @@ Recordes
     }
     .pontos th {
         font-size: 30px;
+        font-family: 'MedievalSharp', cursive;
     }
     .pontos td:first-child {
         font-size: 20px;
+        font-family: 'MedievalSharp', cursive;
     }
     .gramado {
         width: 400px;
