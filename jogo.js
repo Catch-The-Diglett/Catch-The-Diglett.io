@@ -47,7 +47,7 @@ function start() {
  * @fires próximo evento.
  */
 function sobeDiglett() {
-    var buraco = Math.floor(Math.random() * 5);
+    var buraco = Math.floor(Math.random() * 9);
     var objBuraco = document.getElementById('buraco' + buraco);
     objBuraco.src = 'images/diglett_sf.png';
     timer = setTimeout(tiraDiglett, janela, buraco);
@@ -137,3 +137,4 @@ function poke(evento) {
     }
     mostraPontuacao();
 }
+
