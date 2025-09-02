@@ -98,14 +98,14 @@ Regras
 
 .regras .contentBox {
     margin:auto;
-    width: 200%;
+    width: 100%;
     background: #e9e7e3;
     object-position: center;
     background-position: center;
     text-justify: auto;
     text-align: center;
     font-family: 'PokeSolid';
-    font-size: larger;
+    font-size:medium;
     color: #000000;
     cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png)   , pointer !important
 }
@@ -376,10 +376,11 @@ Recordes
 
      /* Regras */
     .regras {
-        flex-direction: column;
-        text-align: center;
-        background-position: center;
-        
+        flex-direction:column;
+        height: auto;
+        width: auto;
+        text-align:center;
+        font-size:medium;
     }
     .regras .imgBox {
         height: 50%;
