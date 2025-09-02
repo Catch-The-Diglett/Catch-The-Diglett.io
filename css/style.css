@@ -112,7 +112,7 @@ Regras
 
 .regras .imgBox {
     width: 150%; 
-    background: url('/Catch-The-Diglett.io-main/images/evil_diglett.gif');
+    background: url('./images/evil_diglett.gif');
     background-repeat:no-repeat;
     background-size: contain;
     background-position: center;
@@ -377,8 +377,6 @@ Recordes
      /* Regras */
     .regras {
         flex-direction:column;
-        height: auto;
-        width: auto;
         text-align:center;
         font-size:medium;
     }
@@ -434,6 +432,7 @@ Recordes
       font-family: "PokeSolid"; /* Escolha um nome para a sua fonte */
       src: url("../fontes/Pokemon\ Solid.ttf") format("truetype"); /* Caminho do ficheiro */
     }
+
 
 
 
