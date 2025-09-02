@@ -114,6 +114,7 @@ Regras
     width: 100%; 
     background: url("evil_diglett.gif");
     background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     object-fit: cover;
     cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png)   , pointer !important
@@ -431,6 +432,7 @@ Recordes
       font-family: "PokeSolid"; /* Escolha um nome para a sua fonte */
       src: url("../fontes/Pokemon\ Solid.ttf") format("truetype"); /* Caminho do ficheiro */
     }
+
 
 
 
