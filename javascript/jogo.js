@@ -12,7 +12,7 @@ var errados = 0;
 var intervalo = 800;
 
 /** tempo que o diglett fica fora do buraco */
-var janela = 800;
+var janela = 1000;
 
 /** timer que controla o tempo do diglett fora do buraco */
 var timer = null;
@@ -26,6 +26,10 @@ onload = function () {
     document.getElementById('buraco2').addEventListener('click', poke);
     document.getElementById('buraco3').addEventListener('click', poke);
     document.getElementById('buraco4').addEventListener('click', poke);
+    document.getElementById('buraco5').addEventListener('click', poke);
+    document.getElementById('buraco6').addEventListener('click', poke);
+    document.getElementById('buraco7').addEventListener('click', poke);
+    document.getElementById('buraco8').addEventListener('click', poke);
 };
 
 /**
@@ -136,5 +140,6 @@ function poke(evento) {
     }
     mostraPontuacao();
 }
+
 
 
