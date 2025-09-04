@@ -64,10 +64,10 @@ function sobeDiglett() {
     }
 
     if (acertos > 0 && acertos % 10 === 0) {
-        if (intervalo > 500) {
+        if (intervalo > 400) {
             intervalo -= 25;
         }
-        if (janela > 500) {
+        if (janela > 400) {
             janela -= 30;
         }
     }
@@ -148,5 +148,6 @@ function pokeBaixo() {
 function pokeCima() {
     document.getElementById('idGramado').style.cursor = "url('images/pokebola_cursor.png') 16 16, auto !important";
 }
+
 
 
