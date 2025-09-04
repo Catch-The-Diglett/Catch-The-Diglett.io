@@ -1,78 +1,117 @@
-/** quantidade de acertos */
-var acertos;
-acertos = 0;    
-
-/** quantidade de diglett perdidos */
+var acertos = 0;
 var perdidos = 0;
-
-/** quantidade de marteladas erradas */
 var errados = 0;
-
-/** tempo entre cada diglett sair do buraco */
-var intervalo = 800;
-
-/** tempo que o diglett fica fora do buraco */
+var intervalo = 1000;
 var janela = 1000;
-
-/** timer que controla o tempo do diglett fora do buraco */
-var timer = null;
+var timerDiglett = null;
+var jogoAtivo = false;
+var tempoRestante = 120;
+var timerJogo = null;
 
 onload = function () {
     document.getElementById('start').addEventListener('click', start);
     document.getElementById('idGramado').addEventListener('mousedown', pokeBaixo);
     document.getElementById('idGramado').addEventListener('mouseup', pokeCima);
-    document.getElementById('buraco0').addEventListener('click', poke);
-    document.getElementById('buraco1').addEventListener('click', poke);
-    document.getElementById('buraco2').addEventListener('click', poke);
-    document.getElementById('buraco3').addEventListener('click', poke);
-    document.getElementById('buraco4').addEventListener('click', poke);
-    document.getElementById('buraco5').addEventListener('click', poke);
-    document.getElementById('buraco6').addEventListener('click', poke);
-    document.getElementById('buraco7').addEventListener('click', poke);
-    document.getElementById('buraco8').addEventListener('click', poke);
+    for (let i = 0; i < 9; i++) {
+        document.getElementById('buraco' + i).addEventListener('click', poke);
+    }
+    mostraTempo(tempoRestante); 
 };
 
-/**
- * Sobe um diglett
- * Remove o evento do botão start
- */
 function start() {
-    var botao = document.getElementById('start')
-
+    var botao = document.getElementById('start');
     botao.removeEventListener('click', start);
-    botao.disable = true;
+    botao.disabled = true;
+
+    acertos = 0;
+    perdidos = 0;
+    errados = 0;
+    intervalo = 800;
+    janela = 1000;
+    tempoRestante = 120;
+    jogoAtivo = true;
+
+    mostraPontuacao();
+    mostraTempo(tempoRestante);
     sobeDiglett();
+    timerJogo = setInterval(atualizaTimer, 1000);
 }
 
-/**
- * Coloca o diglett para fora do buraco.
- * Recalcula o tempo que o diglett fica fora do buraco.
- * @fires remover o diglett
- * @fires próximo evento.
- */
+function atualizaTimer() {
+    tempoRestante--;
+    mostraTempo(tempoRestante);
+
+    if (tempoRestante <= 0) {
+        fimDeJogo();
+    }
+}
+
+function fimDeJogo() {
+    jogoAtivo = false;
+    clearInterval(timerJogo);
+    clearTimeout(timerDiglett);
+
+    alert("Fim de Jogo! Pontuação final: " + (acertos - perdidos - errados));
+
+    var botao = document.getElementById('start');
+    botao.addEventListener('click', start);
+    botao.disabled = false;
+}
+
 function sobeDiglett() {
+    if (!jogoAtivo) {
+        return;
+    }
+
+    if (acertos > 0 && acertos % 10 === 0) {
+        if (intervalo > 500) {
+            intervalo -= 25;
+        }
+        if (janela > 500) {
+            janela -= 30;
+        }
+    }
+
     var buraco = Math.floor(Math.random() * 9);
     var objBuraco = document.getElementById('buraco' + buraco);
     objBuraco.src = 'images/diglett_sf.png';
-    timer = setTimeout(tiraDiglett, janela, buraco);
+    objBuraco.classList.add('diglett'); // Adiciona uma classe para o CSS funcionar
+
+    timerDiglett = setTimeout(tiraDiglett, janela, buraco);
+    
     setTimeout(sobeDiglett, intervalo);
 }
 
-/**
- * Remove o diglett de um buraco
- * 
- * @param {int} buraco número do buraco onde está o diglett
- */
 function tiraDiglett(buraco) {
+    if (!jogoAtivo) return;
     var objBuraco = document.getElementById('buraco' + buraco);
     objBuraco.src = 'images/hole.png';
+    objBuraco.classList.remove('diglett');
     perdidos++;
     mostraPontuacao();
 }
 
-/**
- * A função calcula e exibe o saldo.
- */
+function poke(evento) {
+    if (!jogoAtivo) return;
+
+    if (evento.target.src.includes('diglett_sf')) {
+        acertos++;
+        
+        const diglettAcertado = evento.target;
+        diglettAcertado.classList.add('hit');
+        setTimeout(() => {
+            diglettAcertado.classList.remove('hit');
+        }, 300);
+
+        diglettAcertado.src = 'images/hole.png';
+        diglettAcertado.classList.remove('diglett');
+        clearTimeout(timerDiglett);
+    } else {
+        errados++;
+    }
+    mostraPontuacao();
+}
+
 function mostraPontuacao() {
     mostraPontuacaoDe('acertos', acertos);
     mostraPontuacaoDe('perdidos', perdidos);
@@ -80,24 +119,13 @@ function mostraPontuacao() {
     mostraPontuacaoDe('saldo', Math.max(acertos - perdidos - errados, 0));
 }
 
-/**
- * Mostra um valor no display.
- * 
- * @param {object image} display imagens com display de 16 segmentos
- * @param {int} valor valor a ser exibido com até 3 dígitos
- */
 function mostraPontuacaoDe(display, valor) {
-    // pega as imagens
     let objCentena = document.getElementById(display).firstChild;
     let objDezena = objCentena.nextSibling;
     let objUnidade = objDezena.nextSibling;
-
-    // calcula o valor de cada algarismo
-    let centena = parseInt(valor/100);
-    let dezena = parseInt((valor/10)%10)
-    let unidade = (valor % 10)
-
-    // muda a imagem e o valor do atributo para ledor de tela
+    let centena = parseInt(valor / 100);
+    let dezena = parseInt((valor / 10) % 10);
+    let unidade = (valor % 10);
     objCentena.src = 'images/caractere_' + centena + '.gif';
     objCentena.alt = centena;
     objDezena.src = 'images/caractere_' + dezena + '.gif';
@@ -106,40 +134,17 @@ function mostraPontuacaoDe(display, valor) {
     objUnidade.alt = unidade;
 }
 
-/**
- * Coloca o martelo para baixo.
- */
+function mostraTempo(tempo) {
+    const minutos = Math.floor(tempo / 60);
+    const segundos = tempo % 60;
+    const segundosFormatados = segundos < 10 ? '0' + segundos : segundos;
+    document.getElementById('timer-display').textContent = `0${minutos}:${segundosFormatados}`;
+}
+
 function pokeBaixo() {
-    document.getElementById('idGramado').style.cursor = url('images/pokebola_aberta_cursor.png');
+    if(jogoAtivo) document.getElementById('idGramado').style.cursor =  "url('cursor/pokebola_aberta_cursor.cur') 16 16, auto !important";
 }
 
-/**
- * Coloca o martelo para cima.
- */
 function pokeCima() {
-    document.getElementById('idGramado').style.cursor = url('images/pokebola_cursor.png');
+    document.getElementById('idGramado').style.cursor = "url('cursor/pokebola_cursor.cur') 16 16, auto !important";
 }
-
-/**
- * Trata o evento de uma martelada, ou seja, um click do mouse sobre o gramado.
- * Ao final da martelada, exibe a pontuação atualizada.
- * 
- * @listens event:click
- * @param {event} evento 
- */
-function poke(evento) {
-    if (evento.target.src.includes('diglett_sf')) {
-        // acertou
-        acertos++;
-        evento.target.src = 'images/hole.png';
-        clearTimeout(timer);
-    }
-    else {
-        // errou
-        errados++;
-    }
-    mostraPontuacao();
-}
-
-
-
