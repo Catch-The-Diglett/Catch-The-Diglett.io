@@ -180,6 +180,16 @@ Tabuleiro
     cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png)   , pointer !important
 }
 
+#timer-display{
+    object-position:center;
+    position: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PokeSolid';
+}
+
 #start {
     width: 100%;
     font-size: 36px;
