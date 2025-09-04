@@ -142,10 +142,11 @@ function mostraTempo(tempo) {
 }
 
 function pokeBaixo() {
-    if(jogoAtivo) document.getElementById('idGramado').style.cursor =  "url('cursor/pokebola_aberta_cursor.cur') 16 16, auto !important";
+    if(jogoAtivo) document.getElementById('idGramado').style.cursor =  "url('images/pokebola_aberta_cursor.png') 16 16, auto !important";
 }
 
 function pokeCima() {
-    document.getElementById('idGramado').style.cursor = "url('cursor/pokebola_cursor.cur') 16 16, auto !important";
+    document.getElementById('idGramado').style.cursor = "url('images/pokebola_cursor.png') 16 16, auto !important";
 }
+
 
