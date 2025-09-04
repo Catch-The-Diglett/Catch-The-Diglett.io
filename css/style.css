@@ -428,16 +428,16 @@ Recordes
 
     /* Recordes */
      .records tr th {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
     .records th {
-        font-size: 18px;
+        font-size: 12px;
     }
     .records td {
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 15px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 8px;
     }
 }
 
@@ -450,3 +450,4 @@ Recordes
       font-family: "PokeSolid"; /* Escolha um nome para a sua fonte */
       src: url("../fontes/Pokemon\ Solid.ttf") format("truetype"); /* Caminho do ficheiro */
     }
+
