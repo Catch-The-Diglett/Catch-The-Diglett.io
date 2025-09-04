@@ -26,7 +26,7 @@ function start() {
     acertos = 0;
     perdidos = 0;
     errados = 0;
-    intervalo = 800;
+    intervalo = 1000;
     janela = 1000;
     tempoRestante = 120;
     jogoAtivo = true;
@@ -148,3 +148,4 @@ function pokeBaixo() {
 function pokeCima() {
     document.getElementById('idGramado').style.cursor = "url('cursor/pokebola_cursor.cur') 16 16, auto !important";
 }
+
