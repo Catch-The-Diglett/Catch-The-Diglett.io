@@ -216,7 +216,7 @@ Recordes
     background-color: #e9e7e3;
     text-align: center;
     color: #000000;
-    font-size: xx-large;
+    font-size:large;
     cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png)   , pointer !important
 }
 
@@ -230,7 +230,7 @@ Recordes
 }
 
 .records th {
-    padding-left: 30px;
+    padding-left: 0px;
     padding-right: 30px;
     color: #000000;           
     background-color: #e9e7e3; 
@@ -259,7 +259,6 @@ Recordes
 }
 
 .records td:first-child, td:nth-child(3) {  
-    text-align: right;
     padding-right: 20px;
     text-align: center;
     cursor: url(https://cdn.custom-cursor.com/db/249/32/arrow2282.png)   , pointer !important
@@ -427,9 +426,21 @@ Recordes
     }
 
     /* Recordes */
+    .records {
+        height: 100vh;              
+        align-items: center;        
+        justify-content: center;   
+        text-align: center;
+        font-size:medium;
+    }
+
      .records tr th {
         padding-left: 8px;
         padding-right: 8px;
+        align-items: center;        
+        justify-content: center;   
+        text-align: center;
+
     }
     .records th {
         font-size: 12px;
@@ -438,6 +449,10 @@ Recordes
         padding-left: 8px;
         padding-right: 8px;
         font-size: 8px;
+        align-items: center;        
+        justify-content: center;   
+        text-align: center;
+
     }
 }
 
