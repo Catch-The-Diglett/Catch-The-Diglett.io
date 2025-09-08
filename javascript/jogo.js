@@ -1,3 +1,4 @@
+/*VARIÁVEIS GLOBAIS*/
 var acertos = 0;
 var perdidos = 0;
 var errados = 0;
@@ -5,7 +6,7 @@ var intervalo = 1000;
 var janela = 1000;
 var timerDiglett = null;
 var jogoAtivo = false;
-var tempoRestante = 120;
+var tempoRestante = 60;
 var timerJogo = null;
 
 onload = function () {
@@ -28,7 +29,7 @@ function start() {
     errados = 0;
     intervalo = 1000;
     janela = 1000;
-    tempoRestante = 120;
+    tempoRestante = 60;
     jogoAtivo = true;
 
     mostraPontuacao();
@@ -63,11 +64,11 @@ function sobeDiglett() {
         return;
     }
 
-    if (acertos > 0 && acertos % 10 === 0) {
-        if (intervalo > 400) {
+    if (acertos > 0 && acertos % 5 === 0) {
+        if (intervalo > 300) {
             intervalo -= 25;
         }
-        if (janela > 400) {
+        if (janela > 300) {
             janela -= 30;
         }
     }
@@ -148,6 +149,7 @@ function pokeBaixo() {
 function pokeCima() {
     document.getElementById('idGramado').style.cursor = "url('images/pokebola_cursor.png') 16 16, auto !important";
 }
+
 
 
 
