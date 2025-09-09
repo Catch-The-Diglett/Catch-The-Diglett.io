@@ -3,7 +3,6 @@
 Um jogo interativo desenvolvido em **HTML, CSS e JavaScript**, inspirado no clássico **"Whac-A-Mole"**, criado como parte dos meus estudos na **pós-graduação em Data Science e Analytics da PUC-Rio**.  
 
 👉 [Acesse o site aqui](https://catch-the-diglett.github.io/Catch-The-Diglett.io/)  
-👉 [Acesse o repositório no GitHub](https://github.com/Catch-The-Diglett/Catch-The-Diglett.io) 
 
 ---
 
