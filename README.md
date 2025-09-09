@@ -76,4 +76,4 @@ O projeto cumpriu seu papel como prática de desenvolvimento front-end, unindo c
 ## 🙌 Créditos  
 - Desenvolvido por **Felipe Ramos Pinheiro**.  
 - Inspirado no clássico jogo **Whac-A-Mole**.
-- Criado durante a **pós-graduação em Data Science e Analytics - PUC-Rio** nas aulas de "Introdução a criação de páginas web.": [https://github.com/dipucriodigital/engenharia-de-software/tree/main/introducao-a-criacao-de-paginas-web]
+- Criado durante a **pós-graduação em Data Science e Analytics - PUC-Rio** nas aulas de "Introdução a criação de páginas web.": [(https://github.com/dipucriodigital/engenharia-de-software/tree/main/introducao-a-criacao-de-paginas-web)]
