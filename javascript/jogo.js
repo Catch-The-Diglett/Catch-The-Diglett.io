@@ -1,14 +1,15 @@
 /*VARIÁVEIS GLOBAIS*/
-var acertos = 0;
-var perdidos = 0;
-var errados = 0;
-var intervalo = 1000;
-var janela = 1000;
-var timerDiglett = null;
+var acertos = 0; /* quantidade de acertos */
+var perdidos = 0; /* quantidade de digletts perdidos */
+var errados = 0; /* quantidade de digletts errados */
+var intervalo = 1000; /* tempo entre cada diglett sair do buraco */
+var janela = 1000; /* tempo que o diglett fica fora do buraco */
+var timerDiglett = null; 
 var jogoAtivo = false;
-var tempoRestante = 60;
+var tempoRestante = 60; /* tempo do jogo */
 var timerJogo = null;
 
+/* relacionamento em quais ids os digletts vão aparecer */
 onload = function () {
     document.getElementById('start').addEventListener('click', start);
     document.getElementById('idGramado').addEventListener('mousedown', pokeBaixo);
@@ -19,6 +20,7 @@ onload = function () {
     mostraTempo(tempoRestante); 
 };
 
+/* jogo se inicia e remove o evento do botão start */
 function start() {
     var botao = document.getElementById('start');
     botao.removeEventListener('click', start);
@@ -38,6 +40,7 @@ function start() {
     timerJogo = setInterval(atualizaTimer, 1000);
 }
 
+/* configuração do timer e fim do jogo*/
 function atualizaTimer() {
     tempoRestante--;
     mostraTempo(tempoRestante);
@@ -59,6 +62,7 @@ function fimDeJogo() {
     botao.disabled = false;
 }
 
+/* coloca o diglett para fora do buraco e escalona a dificuldade com base nos acertos*/
 function sobeDiglett() {
     if (!jogoAtivo) {
         return;
@@ -83,6 +87,7 @@ function sobeDiglett() {
     setTimeout(sobeDiglett, intervalo);
 }
 
+/* remove o diglett do buraco */
 function tiraDiglett(buraco) {
     if (!jogoAtivo) return;
     var objBuraco = document.getElementById('buraco' + buraco);
@@ -113,6 +118,7 @@ function poke(evento) {
     mostraPontuacao();
 }
 
+/* mostra a pontuação no display */
 function mostraPontuacao() {
     mostraPontuacaoDe('acertos', acertos);
     mostraPontuacaoDe('perdidos', perdidos);
@@ -120,6 +126,7 @@ function mostraPontuacao() {
     mostraPontuacaoDe('saldo', Math.max(acertos - perdidos - errados, 0));
 }
 
+/* calcula a pontuação e muda as imagens dos valores no display */
 function mostraPontuacaoDe(display, valor) {
     let objCentena = document.getElementById(display).firstChild;
     let objDezena = objCentena.nextSibling;
@@ -135,6 +142,7 @@ function mostraPontuacaoDe(display, valor) {
     objUnidade.alt = unidade;
 }
 
+/* configuração do tempo */
 function mostraTempo(tempo) {
     const minutos = Math.floor(tempo / 60);
     const segundos = tempo % 60;
@@ -142,6 +150,7 @@ function mostraTempo(tempo) {
     document.getElementById('timer-display').textContent = `0${minutos}:${segundosFormatados}`;
 }
 
+/* ao final da cptura exibe a pontuação atualizada */
 function pokeBaixo() {
     if(jogoAtivo) document.getElementById('idGramado').style.cursor =  "url('images/pokebola_aberta_cursor.png') 16 16, auto !important";
 }
@@ -149,6 +158,7 @@ function pokeBaixo() {
 function pokeCima() {
     document.getElementById('idGramado').style.cursor = "url('images/pokebola_cursor.png') 16 16, auto !important";
 }
+
 
 
 
