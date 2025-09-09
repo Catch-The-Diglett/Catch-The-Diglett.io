@@ -2,7 +2,8 @@
 
 Um jogo interativo desenvolvido em **HTML, CSS e JavaScript**, inspirado no clássico **"Whac-A-Mole"**, criado como parte dos meus estudos na **pós-graduação em Data Science e Analytics da PUC-Rio**.  
 
-👉 [Acesse o site aqui][https://github.com/Catch-The-Diglett/Catch-The-Diglett.io](https://catch-the-diglett.github.io/Catch-The-Diglett.io/]
+👉 [Acesse o site aqui](https://catch-the-diglett.github.io/Catch-The-Diglett.io/)  
+👉 [Acesse o repositório no GitHub](https://github.com/Catch-The-Diglett/Catch-The-Diglett.io) 
 
 ---
 
@@ -76,4 +77,5 @@ O projeto cumpriu seu papel como prática de desenvolvimento front-end, unindo c
 ## 🙌 Créditos  
 - Desenvolvido por **Felipe Ramos Pinheiro**.  
 - Inspirado no clássico jogo **Whac-A-Mole**.
-- Criado durante a **pós-graduação em Data Science e Analytics - PUC-Rio** nas aulas de "Introdução a criação de páginas web.": [Respositório Puc-Rio][https://github.com/dipucriodigital/engenharia-de-software/tree/main/introducao-a-criacao-de-paginas-web]
+- Criado durante a **pós-graduação em Data Science e Analytics - PUC-Rio** nas aulas de *"Introdução à criação de páginas web"*:  
+  [Repositório oficial PUC-Rio](https://github.com/dipucriodigital/engenharia-de-software/tree/main/introducao-a-criacao-de-paginas-web)  
